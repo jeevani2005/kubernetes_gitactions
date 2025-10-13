@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./style.css";
-import config from "./config.js";
+
 
 const BooksManager = () => {
   const [books, setBooks] = useState([]);
@@ -20,7 +20,7 @@ const BooksManager = () => {
   const [message, setMessage] = useState("");
   const [editMode, setEditMode] = useState(false);
 
-  const baseUrl = `${config.url}/bookapi`;
+  const baseUrl = `${import.meta.env.VITE_API_URL}/bookapi`;
 
   // fetch all books
   useEffect(() => {
